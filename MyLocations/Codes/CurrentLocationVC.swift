@@ -85,7 +85,7 @@ class CurrentLocationVC: UIViewController, CLLocationManagerDelegate {
     var lastLocationError: NSError?
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("didFailWithError \(error)")
+//        print("didFailWithError \(error)")
         
         if error.code == CLError.LocationUnknown.rawValue {
             return
@@ -99,7 +99,7 @@ class CurrentLocationVC: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last!
-        print("didUpdateLocaitons \(newLocation)")
+//        print("didUpdateLocaitons \(newLocation)")
         
         if newLocation.timestamp.timeIntervalSinceNow < -5 {
             return
@@ -134,7 +134,7 @@ class CurrentLocationVC: UIViewController, CLLocationManagerDelegate {
                 performingReverseGeocoding = true
                 geocoder.reverseGeocodeLocation(newLocation, completionHandler: {
                     placemarks, error in
-                    print("*** Found placemarks: \(placemarks), error: \(error)")
+//                    print("*** Found placemarks: \(placemarks), error: \(error)")
                     self.lastGeocodingError = error
                     if error == nil, let p = placemarks where !p.isEmpty {
                         self.placemark = p.last!
@@ -249,6 +249,15 @@ class CurrentLocationVC: UIViewController, CLLocationManagerDelegate {
             lastLocationError = NSError(domain: "MyLocationsErrorDomain", code: 1, userInfo: nil)
             updateLabels()
             configureGetButton()
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TagLocation" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! LocationDetailsVC
+            controller.coordinate = location!.coordinate
+            controller.placemark = placemark
         }
     }
 }
