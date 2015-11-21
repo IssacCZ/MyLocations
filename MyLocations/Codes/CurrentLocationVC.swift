@@ -35,6 +35,8 @@ class CurrentLocationVC: UIViewController, CLLocationManagerDelegate {
         } else {
             getButton.setTitle("Get My Location", forState: .Normal)
         }
+        
+        self.view.backgroundColor = UIColor(hex: 0x415065)
     }
     
     func updateLabels() {

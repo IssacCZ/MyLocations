@@ -46,6 +46,8 @@ class LocationDetailsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(hex: 0x415065)
+        
         descriptionTextView.text = ""
         categoryLabel.text = categoryName
         

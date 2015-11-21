@@ -20,6 +20,7 @@
 		22AA29901BFCB8C300CB2C8A /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22AA298E1BFCB8C300CB2C8A /* DataModel.xcdatamodeld */; };
 		22AA29931BFD558A00CB2C8A /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA29911BFD558A00CB2C8A /* Location+CoreDataProperties.swift */; };
 		22AA29941BFD558A00CB2C8A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA29921BFD558A00CB2C8A /* Location.swift */; };
+		22E6FC361C0047860095479F /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6FC351C0047860095479F /* UIColor+Helper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		22AA298F1BFCB8C300CB2C8A /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		22AA29911BFD558A00CB2C8A /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		22AA29921BFD558A00CB2C8A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		22E6FC331C0047860095479F /* MyLocations-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyLocations-Bridging-Header.h"; sourceTree = "<group>"; };
+		22E6FC341C0047860095479F /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
+		22E6FC351C0047860095479F /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +87,15 @@
 				22AA29911BFD558A00CB2C8A /* Location+CoreDataProperties.swift */,
 				22AA29921BFD558A00CB2C8A /* Location.swift */,
 				229B85501BF7643A002243D9 /* AppDelegate.swift */,
+				22AA29891BFC107300CB2C8A /* Functions.swift */,
+				22AA29871BFB4E4900CB2C8A /* HudView.swift */,
+				22E6FC341C0047860095479F /* UIColor+Helper.h */,
+				22E6FC351C0047860095479F /* UIColor+Helper.m */,
+				22E6FC331C0047860095479F /* MyLocations-Bridging-Header.h */,
 				229B85511BF7643A002243D9 /* CurrentLocationVC.swift */,
 				229B85521BF7643A002243D9 /* SecondViewController.swift */,
 				22AA29771BF9BD6300CB2C8A /* LocaitonDetailsVC.swift */,
-				22AA29891BFC107300CB2C8A /* Functions.swift */,
 				22AA29791BFA076100CB2C8A /* CategoryPickerVC.swift */,
-				22AA29871BFB4E4900CB2C8A /* HudView.swift */,
 			);
 			path = Codes;
 			sourceTree = "<group>";
@@ -187,6 +194,7 @@
 				22AA29901BFCB8C300CB2C8A /* DataModel.xcdatamodeld in Sources */,
 				22AA29941BFD558A00CB2C8A /* Location.swift in Sources */,
 				229B85531BF7643A002243D9 /* AppDelegate.swift in Sources */,
+				22E6FC361C0047860095479F /* UIColor+Helper.m in Sources */,
 				22AA29881BFB4E4A00CB2C8A /* HudView.swift in Sources */,
 				22AA298A1BFC107300CB2C8A /* Functions.swift in Sources */,
 				22AA29931BFD558A00CB2C8A /* Location+CoreDataProperties.swift in Sources */,
@@ -284,10 +292,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyLocations/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iyd.Issac.MyLocations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyLocations/Codes/MyLocations-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -295,10 +306,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyLocations/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iyd.Issac.MyLocations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyLocations/Codes/MyLocations-Bridging-Header.h";
 			};
 			name = Release;
 		};
