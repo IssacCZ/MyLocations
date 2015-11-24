@@ -5,7 +5,6 @@
 //  Created by IssacCZ on 11/14/15.
 //  Copyright © 2015 Issac. All rights reserved.
 //
-// 北京下雪了
 
 import UIKit
 import CoreData
