@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CoreLocation
 import Dispatch
+import CoreData
 
 private let dateFormatter: NSDateFormatter = {
     let formatter = NSDateFormatter()
@@ -30,6 +31,11 @@ class LocationDetailsVC: UITableViewController {
     var placemark: CLPlacemark?
     var categoryName = "No Category"
     
+    var managedObjectContext: NSManagedObjectContext!
+
+    /**
+     点击doneButton，返回到dismiss本页，回到上一页
+     */
     @IBAction func done() {
         let hudView = HudView.hudInView(navigationController!.view, animated: true)
         hudView.text = "Tagged"

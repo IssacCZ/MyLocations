@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class CurrentLocationVC: UIViewController, CLLocationManagerDelegate {
     // MARK: - UI & viewDelegate
@@ -17,6 +18,8 @@ class CurrentLocationVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var tagButton: UIButton!
     @IBOutlet weak var getButton: UIButton!
+    
+    var managedObjectContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -260,6 +263,8 @@ class CurrentLocationVC: UIViewController, CLLocationManagerDelegate {
             let controller = navigationController.topViewController as! LocationDetailsVC
             controller.coordinate = location!.coordinate
             controller.placemark = placemark
+            
+            controller.managedObjectContext = managedObjectContext
         }
     }
 }
