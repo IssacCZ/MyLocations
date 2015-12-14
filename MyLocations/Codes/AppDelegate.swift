@@ -9,12 +9,24 @@
 import UIKit
 import CoreData
 
+let MyManagedObjectContextSaveDidFailNotification = "MyManagedObjectContextSaveDidFailNotification"
+
+/**
+ 保存数据出错
+ 
+ - parameter error: 输出error
+ */
+func fatalCoreDataError(error: ErrorType) {
+    print("*** Fatal error: \(error)");
+    NSNotificationCenter.defaultCenter().postNotificationName(MyManagedObjectContextSaveDidFailNotification, object: nil)
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let tabBarController = window!.rootViewController as! UITabBarController
         if let tabBarVCs = tabBarController.viewControllers {
@@ -22,31 +34,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             currentLocationVC.managedObjectContext = manageObjectContext
         }
         
+        listenForFatalCoreDataNotifications()
+        
         return true
     }
-
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
-
+    
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
-
+    
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
-
+    
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
+    
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
     lazy var manageObjectContext: NSManagedObjectContext = {
         guard let modelURL = NSBundle.mainBundle().URLForResource("DataModel", withExtension: "momd") else {
             fatalError("Could not find data model in app bundle")
@@ -72,5 +86,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError("Error adding persisten store at \(storeURL): \(error)")
         }
     }()
+    
+    /**
+     接收CoreData错误消息
+     */
+    func listenForFatalCoreDataNotifications() {
+        NSNotificationCenter.defaultCenter().addObserverForName(
+            MyManagedObjectContextSaveDidFailNotification,
+            object: nil,
+            queue: NSOperationQueue.mainQueue(),
+            usingBlock: { notification in
+                
+                let alert = UIAlertController(
+                    title: "Internal Error",
+                    message: "There was a fatal error in the app and it can not continue.\n\n" + "Press OK to terminate the app. Sorry for the inconvenience.",
+                    preferredStyle: .Alert)
+                
+                let action = UIAlertAction(
+                    title: "OK",
+                    style: .Default) { _ in
+                        let exception = NSException(
+                            name: NSInternalInconsistencyException,
+                            reason: "Fatal Core Data error",
+                            userInfo: nil)
+                    exception.raise()
+                }
+                
+                alert.addAction(action)
+                
+                self.viewControllerForShowingAlert().presentViewController(alert, animated: true, completion: nil)
+        })
+    }
+    
+    func viewControllerForShowingAlert() -> UIViewController {
+        let rootViewController = self.window!.rootViewController!
+        if let presentedViewController = rootViewController.presentedViewController {
+            return presentedViewController
+        } else {
+            return rootViewController
+        }
+    }
 }
 
