@@ -32,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let tabBarVCs = tabBarController.viewControllers {
             let currentLocationVC = tabBarVCs[0] as! CurrentLocationVC
             currentLocationVC.managedObjectContext = manageObjectContext
+            
+            let navigationController = tabBarVCs[1] as! UINavigationController
+            let locationsVC = navigationController.viewControllers[0] as! LocationsViewController
+            locationsVC.managedObjectContext = manageObjectContext
         }
         
         listenForFatalCoreDataNotifications()
@@ -118,6 +122,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
     
+    /**
+     获取当前VC
+     
+     - returns: 返回当前VC
+     */
     func viewControllerForShowingAlert() -> UIViewController {
         let rootViewController = self.window!.rootViewController!
         if let presentedViewController = rootViewController.presentedViewController {
