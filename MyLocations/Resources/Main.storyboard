@@ -128,7 +128,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="57" id="Pm5-OY-gx1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="57" id="Pm5-OY-gx1" customClass="LocationCell" customModule="MyLocations" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pm5-OY-gx1" id="sLQ-7m-g8M">
@@ -155,6 +155,10 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="addressLabel" destination="8u9-mR-OjD" id="ZAs-uZ-0so"/>
+                                    <outlet property="descriptionLabel" destination="Rrm-3C-jjO" id="Lft-ER-FLZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
