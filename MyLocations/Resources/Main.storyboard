@@ -158,6 +158,7 @@
                                 <connections>
                                     <outlet property="addressLabel" destination="8u9-mR-OjD" id="ZAs-uZ-0so"/>
                                     <outlet property="descriptionLabel" destination="Rrm-3C-jjO" id="Lft-ER-FLZ"/>
+                                    <segue destination="MFs-bj-U2M" kind="modal" identifier="EditLocation" id="3Pb-If-LgX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -495,4 +496,7 @@
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3Pb-If-LgX"/>
+    </inferredMetricsTieBreakers>
 </document>

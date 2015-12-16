@@ -33,15 +33,37 @@ class LocationDetailsVC: UITableViewController {
     var date = NSDate()
     
     var managedObjectContext: NSManagedObjectContext!
+    var locationToEdit: Location? {
+        didSet {
+            if let location = locationToEdit {
+                descriptionText = location.locationDescription
+                categoryName = location.category
+                date = location.date
+                coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude);
+                placemark = location.placemark
+            }
+        }
+    }
+    
+    var descriptionText = ""
+    
 
     /**
      点击doneButton，返回到dismiss本页，回到上一页
      */
     @IBAction func done() {
         let hudView = HudView.hudInView(navigationController!.view, animated: true)
-        hudView.text = "Tagged"
         
-        let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
+        let location: Location
+        if let temp = locationToEdit {
+            hudView.text = "Updated"
+            location = temp
+        } else {
+            hudView.text = "Tagged"
+        
+            location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
+        }
+        
         location.locationDescription = descriptionTextView.text
         location.category = categoryName
         location.latitude = coordinate.latitude
@@ -67,9 +89,13 @@ class LocationDetailsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let location = locationToEdit {
+            title = "Edit Location"
+        }
+        
         self.view.backgroundColor = UIColor(hex: 0x415065)
         
-        descriptionTextView.text = ""
+        descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
         
         latitudeLabel.text = String(format: "%.4f", coordinate.latitude)
