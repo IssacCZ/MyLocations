@@ -21,6 +21,8 @@
 		22AA29941BFD558A00CB2C8A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA29921BFD558A00CB2C8A /* Location.swift */; };
 		22C882021C1EC963004E19F2 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C882011C1EC963004E19F2 /* LocationsViewController.swift */; };
 		22C882081C20F703004E19F2 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C882071C20F703004E19F2 /* LocationCell.swift */; };
+		22C882471C279501004E19F2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C882461C279501004E19F2 /* MapKit.framework */; };
+		22C882491C2795C4004E19F2 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C882481C2795C4004E19F2 /* MapVC.swift */; };
 		22E6FC361C0047860095479F /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6FC351C0047860095479F /* UIColor+Helper.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		22AA29921BFD558A00CB2C8A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		22C882011C1EC963004E19F2 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		22C882071C20F703004E19F2 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		22C882461C279501004E19F2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		22C882481C2795C4004E19F2 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		22E6FC331C0047860095479F /* MyLocations-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyLocations-Bridging-Header.h"; sourceTree = "<group>"; };
 		22E6FC341C0047860095479F /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
 		22E6FC351C0047860095479F /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C882471C279501004E19F2 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +65,7 @@
 		229B852F1BF75CB4002243D9 = {
 			isa = PBXGroup;
 			children = (
+				22C882461C279501004E19F2 /* MapKit.framework */,
 				229B853A1BF75CB4002243D9 /* MyLocations */,
 				229B85391BF75CB4002243D9 /* Products */,
 			);
@@ -99,6 +105,7 @@
 				22AA29791BFA076100CB2C8A /* CategoryPickerVC.swift */,
 				22C882011C1EC963004E19F2 /* LocationsViewController.swift */,
 				22C882071C20F703004E19F2 /* LocationCell.swift */,
+				22C882481C2795C4004E19F2 /* MapVC.swift */,
 			);
 			path = Codes;
 			sourceTree = "<group>";
@@ -195,6 +202,7 @@
 			files = (
 				22AA29901BFCB8C300CB2C8A /* DataModel.xcdatamodeld in Sources */,
 				22AA29941BFD558A00CB2C8A /* Location.swift in Sources */,
+				22C882491C2795C4004E19F2 /* MapVC.swift in Sources */,
 				229B85531BF7643A002243D9 /* AppDelegate.swift in Sources */,
 				22E6FC361C0047860095479F /* UIColor+Helper.m in Sources */,
 				22C882081C20F703004E19F2 /* LocationCell.swift in Sources */,
