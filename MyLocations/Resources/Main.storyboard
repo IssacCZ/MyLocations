@@ -39,6 +39,9 @@
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="ZOo-qC-yO8" id="pAC-Kq-nOn"/>
+                                </connections>
                             </navigationBar>
                         </subviews>
                         <animations/>
@@ -47,6 +50,7 @@
                     <tabBarItem key="tabBarItem" title="Map" id="vLI-us-LRd"/>
                     <connections>
                         <outlet property="mapView" destination="qMF-Kj-Yqv" id="opK-Qu-Rn4"/>
+                        <segue destination="MFs-bj-U2M" kind="modal" identifier="EditLocation" id="5Qb-h8-dXi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PY5-RI-fKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -546,6 +550,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Pb-If-LgX"/>
+        <segue reference="5Qb-h8-dXi"/>
     </inferredMetricsTieBreakers>
 </document>
