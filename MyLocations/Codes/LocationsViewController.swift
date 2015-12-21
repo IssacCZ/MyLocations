@@ -19,14 +19,15 @@ class LocationsViewController: UITableViewController {
         let entity = NSEntityDescription.entityForName("Location", inManagedObjectContext: self.managedObjectContext)
         fetchRequest.entity = entity
     
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        let sortDescriptor1 = NSSortDescriptor(key: "category", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
     
         fetchRequest.fetchBatchSize = 20
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
             managedObjectContext: self.managedObjectContext,
-            sectionNameKeyPath: nil,
+            sectionNameKeyPath: "category",
             cacheName: "Locations")
         
         fetchedResultsController.delegate = self
@@ -81,6 +82,16 @@ class LocationsViewController: UITableViewController {
                 fatalCoreDataError(error)
             }
         }
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return fetchedResultsController.sections!.count
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionInfo = fetchedResultsController.sections![section]
+        
+        return sectionInfo.name
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
