@@ -50,7 +50,8 @@ class LocationDetailsVC: UITableViewController {
     
     var descriptionText = ""
     
-
+    var observer: AnyObject!
+    
     /**
      点击doneButton，返回到dismiss本页，回到上一页
      */
@@ -63,7 +64,7 @@ class LocationDetailsVC: UITableViewController {
             location = temp
         } else {
             hudView.text = "Tagged"
-        
+            
             location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
         }
         
@@ -98,6 +99,8 @@ class LocationDetailsVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        listenForBackgroundNotification()
         
         if let location = locationToEdit {
             title = "Edit Location"
@@ -210,6 +213,24 @@ class LocationDetailsVC: UITableViewController {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             pickPhoto()
         }
+    }
+    
+    func listenForBackgroundNotification() {
+        observer = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidEnterBackgroundNotification, object: nil, queue: NSOperationQueue.mainQueue()) {
+            [weak self] _ in
+            if let strongSelf = self {
+                if strongSelf.presentedViewController != nil {
+                    strongSelf.dismissViewControllerAnimated(false, completion: nil)
+                }
+                
+                strongSelf.descriptionTextView.resignFirstResponder()
+            }
+        }
+    }
+    
+    deinit {
+        print("*** deinit \(self)")
+        NSNotificationCenter.defaultCenter().removeObserver(observer)
     }
 }
 
