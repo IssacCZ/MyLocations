@@ -119,6 +119,11 @@ class LocationDetailsVC: UITableViewController {
         
         if let location = locationToEdit {
             title = "Edit Location"
+            if location.hasPhoto {
+                if let image = location.photoImage {
+                    showImage(image)
+                }
+            }
         }
         
         self.view.backgroundColor = UIColor(hex: 0x415065)
