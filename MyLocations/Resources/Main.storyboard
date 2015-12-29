@@ -44,7 +44,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="vLI-us-LRd"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="vLI-us-LRd"/>
                     <connections>
                         <outlet property="mapView" destination="qMF-Kj-Yqv" id="opK-Qu-Rn4"/>
                         <segue destination="MFs-bj-U2M" kind="modal" identifier="EditLocation" id="5Qb-h8-dXi"/>
@@ -127,7 +127,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tag" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Tag" image="Tag" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="addressLabel" destination="l48-EW-QcT" id="2Rm-bR-PJ3"/>
                         <outlet property="getButton" destination="MI8-Li-XJA" id="LMK-rg-9gl"/>
@@ -220,7 +220,7 @@
         <scene sceneID="310-K8-2Sq">
             <objects>
                 <navigationController id="hzP-5E-VcR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Locations" id="UVO-2T-1b8"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="Locations" id="UVO-2T-1b8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ahS-zf-QY5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -510,10 +510,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="Locations" width="30" height="30"/>
+        <image name="Map" width="30" height="30"/>
+        <image name="Tag" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8fL-ll-rdC"/>
+        <segue reference="5Qb-h8-dXi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.93333333333333335" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
 </document>
