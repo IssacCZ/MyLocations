@@ -242,7 +242,8 @@ class LocationDetailsVC: UITableViewController {
 
 extension LocationDetailsVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func takePhotoWithCamera() {
-        let imagePicker = UIImagePickerController()
+        let imagePicker = MyImagePickerController()
+        imagePicker.view.tintColor = view.tintColor
         imagePicker.sourceType = .Camera
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
@@ -266,7 +267,8 @@ extension LocationDetailsVC: UIImagePickerControllerDelegate, UINavigationContro
     }
     
     func choosePhotoFromLibrar() {
-        let imagePicker = UIImagePickerController()
+        let imagePicker = MyImagePickerController()
+        imagePicker.view.tintColor = view.tintColor
         imagePicker.sourceType = .PhotoLibrary
         imagePicker.delegate = self
         imagePicker.allowsEditing = true

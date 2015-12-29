@@ -21,6 +21,9 @@
 		22AA29941BFD558A00CB2C8A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA29921BFD558A00CB2C8A /* Location.swift */; };
 		22AA63E51C31683600F51A0C /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA63E41C31683600F51A0C /* UIImage+Resize.swift */; };
 		22AA63E71C3234B800F51A0C /* String+AddText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA63E61C3234B800F51A0C /* String+AddText.swift */; };
+		22AA63ED1C32A3E000F51A0C /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA63EC1C32A3E000F51A0C /* MyTabBarController.swift */; };
+		22AA63EF1C32A46D00F51A0C /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA63EE1C32A46D00F51A0C /* MyNavigationController.swift */; };
+		22AA63F11C32A4FB00F51A0C /* MyImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA63F01C32A4FB00F51A0C /* MyImagePickerController.swift */; };
 		22C882021C1EC963004E19F2 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C882011C1EC963004E19F2 /* LocationsViewController.swift */; };
 		22C882081C20F703004E19F2 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C882071C20F703004E19F2 /* LocationCell.swift */; };
 		22C882471C279501004E19F2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C882461C279501004E19F2 /* MapKit.framework */; };
@@ -45,6 +48,9 @@
 		22AA29921BFD558A00CB2C8A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		22AA63E41C31683600F51A0C /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		22AA63E61C3234B800F51A0C /* String+AddText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AddText.swift"; sourceTree = "<group>"; };
+		22AA63EC1C32A3E000F51A0C /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
+		22AA63EE1C32A46D00F51A0C /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		22AA63F01C32A4FB00F51A0C /* MyImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImagePickerController.swift; sourceTree = "<group>"; };
 		22C882011C1EC963004E19F2 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		22C882071C20F703004E19F2 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		22C882461C279501004E19F2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -112,6 +118,9 @@
 				22C882481C2795C4004E19F2 /* MapVC.swift */,
 				22AA63E41C31683600F51A0C /* UIImage+Resize.swift */,
 				22AA63E61C3234B800F51A0C /* String+AddText.swift */,
+				22AA63EC1C32A3E000F51A0C /* MyTabBarController.swift */,
+				22AA63EE1C32A46D00F51A0C /* MyNavigationController.swift */,
+				22AA63F01C32A4FB00F51A0C /* MyImagePickerController.swift */,
 			);
 			path = Codes;
 			sourceTree = "<group>";
@@ -207,14 +216,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				22AA29901BFCB8C300CB2C8A /* DataModel.xcdatamodeld in Sources */,
+				22AA63EF1C32A46D00F51A0C /* MyNavigationController.swift in Sources */,
 				22AA29941BFD558A00CB2C8A /* Location.swift in Sources */,
 				22C882491C2795C4004E19F2 /* MapVC.swift in Sources */,
 				229B85531BF7643A002243D9 /* AppDelegate.swift in Sources */,
+				22AA63F11C32A4FB00F51A0C /* MyImagePickerController.swift in Sources */,
 				22E6FC361C0047860095479F /* UIColor+Helper.m in Sources */,
 				22C882081C20F703004E19F2 /* LocationCell.swift in Sources */,
 				22AA29881BFB4E4A00CB2C8A /* HudView.swift in Sources */,
 				22AA63E51C31683600F51A0C /* UIImage+Resize.swift in Sources */,
 				22AA298A1BFC107300CB2C8A /* Functions.swift in Sources */,
+				22AA63ED1C32A3E000F51A0C /* MyTabBarController.swift in Sources */,
 				22AA29931BFD558A00CB2C8A /* Location+CoreDataProperties.swift in Sources */,
 				22AA29781BF9BD6300CB2C8A /* LocaitonDetailsVC.swift in Sources */,
 				229B85541BF7643A002243D9 /* CurrentLocationVC.swift in Sources */,
