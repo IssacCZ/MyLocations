@@ -29,8 +29,6 @@ class CategoryPickerVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(hex: 0x415065)
-        
         for i in 0..<categories.count {
             if categories[i] == selectedCategoryName {
                 selectedIndexPath = NSIndexPath(forRow: i, inSection: 0)

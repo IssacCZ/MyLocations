@@ -126,8 +126,6 @@ class LocationDetailsVC: UITableViewController {
             }
         }
         
-        self.view.backgroundColor = UIColor(hex: 0x415065)
-        
         descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
         
