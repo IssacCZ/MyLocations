@@ -11,7 +11,6 @@
 		229B85531BF7643A002243D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229B85501BF7643A002243D9 /* AppDelegate.swift */; };
 		229B85541BF7643A002243D9 /* CurrentLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229B85511BF7643A002243D9 /* CurrentLocationVC.swift */; };
 		229B855A1BF764AE002243D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229B85571BF764AE002243D9 /* Assets.xcassets */; };
-		229B855B1BF764AE002243D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229B85581BF764AE002243D9 /* LaunchScreen.storyboard */; };
 		229B855C1BF764AE002243D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229B85591BF764AE002243D9 /* Main.storyboard */; };
 		22AA29781BF9BD6300CB2C8A /* LocaitonDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA29771BF9BD6300CB2C8A /* LocaitonDetailsVC.swift */; };
 		22AA297A1BFA076100CB2C8A /* CategoryPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA29791BFA076100CB2C8A /* CategoryPickerVC.swift */; };
@@ -38,7 +37,6 @@
 		229B85501BF7643A002243D9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229B85511BF7643A002243D9 /* CurrentLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentLocationVC.swift; sourceTree = "<group>"; };
 		229B85571BF764AE002243D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		229B85581BF764AE002243D9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		229B85591BF764AE002243D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		229B855E1BF764BC002243D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AA29771BF9BD6300CB2C8A /* LocaitonDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaitonDetailsVC.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 			children = (
 				220012C51C3376B500F332E9 /* Sound */,
 				229B85571BF764AE002243D9 /* Assets.xcassets */,
-				229B85581BF764AE002243D9 /* LaunchScreen.storyboard */,
 				229B85591BF764AE002243D9 /* Main.storyboard */,
 				22AA298E1BFCB8C300CB2C8A /* DataModel.xcdatamodeld */,
 			);
@@ -216,7 +213,6 @@
 				229B855C1BF764AE002243D9 /* Main.storyboard in Resources */,
 				229B855A1BF764AE002243D9 /* Assets.xcassets in Resources */,
 				220012C71C3376B500F332E9 /* Sound.caf in Resources */,
-				229B855B1BF764AE002243D9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyLocations/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -350,6 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyLocations/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
