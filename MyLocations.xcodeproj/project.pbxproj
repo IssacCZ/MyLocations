@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220012C71C3376B500F332E9 /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 220012C61C3376B500F332E9 /* Sound.caf */; };
 		229B85531BF7643A002243D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229B85501BF7643A002243D9 /* AppDelegate.swift */; };
 		229B85541BF7643A002243D9 /* CurrentLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229B85511BF7643A002243D9 /* CurrentLocationVC.swift */; };
 		229B855A1BF764AE002243D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229B85571BF764AE002243D9 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		220012C61C3376B500F332E9 /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
 		229B85381BF75CB4002243D9 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229B85501BF7643A002243D9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229B85511BF7643A002243D9 /* CurrentLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentLocationVC.swift; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220012C51C3376B500F332E9 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				220012C61C3376B500F332E9 /* Sound.caf */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		229B852F1BF75CB4002243D9 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		229B85561BF764AE002243D9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				220012C51C3376B500F332E9 /* Sound */,
 				229B85571BF764AE002243D9 /* Assets.xcassets */,
 				229B85581BF764AE002243D9 /* LaunchScreen.storyboard */,
 				229B85591BF764AE002243D9 /* Main.storyboard */,
@@ -204,6 +215,7 @@
 			files = (
 				229B855C1BF764AE002243D9 /* Main.storyboard in Resources */,
 				229B855A1BF764AE002243D9 /* Assets.xcassets in Resources */,
+				220012C71C3376B500F332E9 /* Sound.caf in Resources */,
 				229B855B1BF764AE002243D9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
